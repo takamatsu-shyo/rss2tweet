@@ -1,0 +1,16 @@
+[Unit]
+Description=Twitter Bot for Blog Posts
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/rss2tweet/
+ExecStart=/home/pi/rss2tweet/venv/bin/python3 /home/pi/rss2tweet/twitter_bot.py
+StandardOutput=journal
+StandardError=journal
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
